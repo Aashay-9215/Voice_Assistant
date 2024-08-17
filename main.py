@@ -29,6 +29,7 @@ def listen_for_command(recognizer):
             audio = recognizer.listen(source,timeout = 2,phrase_time_limit = 3)
             print("Recognizing command...")
             command = recognizer.recognize_google(audio)
+            print("Command given was :",command)
             return command
     except sr.UnknownValueError:
         print("Could not understand audio.")

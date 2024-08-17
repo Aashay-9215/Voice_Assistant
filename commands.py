@@ -2,7 +2,8 @@ import webbrowser
 import musiclibrary
 from news import fetch_latest_news
 from text_to_speech import TextToSpeech
-from client import ai_reply
+from openai_client import openai_reply
+from gemini_client import gemini_reply
 
 tts = TextToSpeech()
 
@@ -29,4 +30,5 @@ def process_command(command):
         else:
             tts.speak("Sorry, I couldn't fetch the news right now.")
     else:
-        tts.speak(ai_reply(command))
+        #tts.speak(openai_reply(command))
+        tts.speak(gemini_reply(command))
